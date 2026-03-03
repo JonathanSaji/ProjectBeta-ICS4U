@@ -13,7 +13,7 @@ body {
 }
 /* Title Panel Section */
 .app-header {
-  padding: 20px 6vw 10px; /* Creates empty space inside an element, specifically between the element's content and its border */
+  padding: 10px 2vw 10px; /* Creates empty space inside an element, specifically between the element's content and its border */
   display: flex; /* Determines Whether it should stand alone, sit next to others, or act as a container for a complex layout*/
   align-items: center;
   justify-content: space-between; /* Aligns items to the left and right edges of the container, with space in between */
@@ -38,16 +38,16 @@ body {
 }
 
 .header-main img {
-  height: 60px;   /* change this number to make it smaller */
+  height: 100px;   /* change this number to make it smaller */
   width: auto;    /* keeps the proportions correct */
 }
 
 .header-main h1{
-    font-size:xx-large;
+    font-size:100;
 }
 
 .header-main h2{
-    font-size: small;
+    font-size: 72;
 }
 
 /* Button styling */
@@ -68,6 +68,14 @@ body {
     background-color: #000000;
     border: 2px solid #ff0000; /* 2px red border */
     color: rgb(255, 255, 255);
+}
+
+.app-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 10px 6vw 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
 }
 
 
