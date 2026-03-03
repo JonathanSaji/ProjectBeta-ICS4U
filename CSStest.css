@@ -1,3 +1,55 @@
+@font-face {
+    font-family: 'MyCustomFont'; /* Name you'll use in CSS */
+    src: url('fonts/MyCustomFont.woff2') format('woff2'), /* Modern browsers */
+         url('fonts/MyCustomFont.woff') format('woff');   /* Fallback */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'MyCustomMono', monospace;
+    background-color: black; 
+    color: white; /* Ensures text is visible on the black background */
+}
+/* Title Panel Section */
+.app-header {
+  padding: 20px 6vw 10px; /* Creates empty space inside an element, specifically between the element's content and its border */
+  display: flex; /* Determines Whether it should stand alone, sit next to others, or act as a container for a complex layout*/
+  align-items: center;
+  justify-content: space-between; /* Aligns items to the left and right edges of the container, with space in between */
+  gap: 24px; /* Adds space between flex items, in this case, 24 pixels */
+  border-bottom: 20px solid var(--border-subtle); /* Adds a subtle border at the bottom of the header, using a CSS variable for color */
+  background: radial-gradient(circle at top left, rgba(252, 251, 246, 0.1)); /* Creates a radial gradient background that starts from the top left corner, with a very light color */
+}
+
+/* Title Panel Section (Testing)*/
+.app-headerTest {
+  padding: 20px 6vw 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgb(0, 0, 0);
+}
+.header-mainTest {
+    background-color: lightblue;
+    padding: 10px;
+}
+
+.header-main img {
+  height: 60px;   /* change this number to make it smaller */
+  width: auto;    /* keeps the proportions correct */
+}
+
+.header-main h1{
+    font-size:xx-large;
+}
+
+.header-main h2{
+    font-size: small;
+}
+
 /* Button styling */
 .my-button {
     background-color: #ffffff; /* Green */
@@ -11,9 +63,12 @@
     transition: background-color 0.3s ease;
 }
 
-/* Hover effect */
+/* Hover enfifgegcat */
 .my-button:hover {
     background-color: #000000;
     border: 2px solid #ff0000; /* 2px red border */
     color: rgb(255, 255, 255);
 }
+
+
+   
