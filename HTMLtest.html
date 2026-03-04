@@ -1,36 +1,47 @@
-<!DOCTYPE html>
 <!-- HTML Set Up-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SubSync - Sync Corp.</title>
+<title>SubSync</title>
 
-<!-- Link to external CSS -->
+<!-- Linking-->
 <link rel="stylesheet" href="CSStest.css">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script src="script.js"></script>
 
 <!-- Title Header Creation-->
 </head>
 <body>
-    <header class = "app-header">
-        <div class = "header-main">
-            <h1>SubSync</h1>
-            <h2>Sync Corp.</h2>
-            <img src=AppLogo.png>
 
+    <header class="app-header" id="top">
+      <nav class="nav-bar">
+        <div class="nav-left">
+          <div class="appName">SubSync</div>
+          <img src=AppLogo.png>
+        </div>
+
+        <div class="nav-center">
+          <!-- href links to a id of an element -->
+          <a href="#dashboard" class="nav-link">Dashboard</a>
+          <a href="#insights" class="nav-link">Insights</a>
+          <a href="#ai-advisor" class="nav-link">AI Advisor</a>
+        </div>
+
+        <div class="nav-right">
+          <button class="btn" id="openAddModalNav">Add Subscription</button>
+          <!-- <button class="btn btn-primary btn-small" id="openAddModalNav">Add Subscription</button> -->
+        </div>
+
+        <div class = "header-main"></div>
+      </nav>
     </header>
-
-    <header class = "app-headerTest"> <!-- Main Panel / Header that holds strucutres ex: Panel on a Frame-->
-        <div class = "header-mainTest"> <!-- Inner section of the header panel ex: Panel on a Panel-->
-            <h2>Welcome To Your Subscription Tracking App</h2>
-    </header>
-
 <!-- Container where button will be added -->
 
 <div id="button-container"></div>
-
-<!-- Link to external JavaScript -->
-<script src="script.js"></script>
 
 <main>
   <!-- Section 1 -->
@@ -64,5 +75,6 @@
  <footer class="app-footer">
     <p>SubSync keeps your renewals visible so surprises don’t hit your balance.</p>
   </footer>
+
 </body>
 </html>

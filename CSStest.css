@@ -5,52 +5,131 @@
     font-weight: normal;
     font-style: normal;
 }
+/* Constant Properties **Called using var() */
+:root {
+    --bg-main: #000000;
+    --bg-card: #121212;
+    --accentColour: #ffd700;
+    --accentColour-soft: rgba(255, 215, 0, 0.15);
+    --text-main: #ffffff;
+    --text-muted: #b3b3b3;
+    --border-subtle: #2a2a2a;
+    --danger: #ff4d4d;
+    --radius-card: 14px;
+    --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.7);
+    --shadow-card: 0 14px 35px rgba(15, 23, 42, 0.45);
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+    --blur-strong: 22px;
+    --transition-fast: 0.18s ease-out;
+    --transition-med: 0.28s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
     font-family: 'MyCustomMono', monospace;
     background-color: black; 
     color: white; /* Ensures text is visible on the black background */
 }
-/* Title Panel Section */
+/*=========Title Panel Section==========*/
 .app-header {
-  padding: 10px 2vw 10px; /* Creates empty space inside an element, specifically between the element's content and its border */
-  display: flex; /* Determines Whether it should stand alone, sit next to others, or act as a container for a complex layout*/
-  align-items: center;
-  justify-content: space-between; /* Aligns items to the left and right edges of the container, with space in between */
-  gap: 24px; /* Adds space between flex items, in this case, 24 pixels */
-  border-bottom: 20px solid var(--border-subtle); /* Adds a subtle border at the bottom of the header, using a CSS variable for color */
-  background: radial-gradient(circle at top left, rgba(252, 251, 246, 0.1)); /* Creates a radial gradient background that starts from the top left corner, with a very light color */
+    padding: 14px 20px; /* Creates empty space inside an element, specifically between the element's content and its border */
+    display: flex; /* Determines Whether it should stand alone, sit next to others, or act as a container for a complex layout*/
+    align-items: center;
+    justify-content: space-between; /* Aligns items to the left and right edges of the container, with space in between */
+    gap: 24px; /* Adds space between flex items, in this case, 24 pixels */
+    background: radial-gradient(circle at top left, rgba(252, 251, 246, 0.1)); /* Creates a radial gradient background that starts from the top left corner, with a very light color */
+    border-bottom: 1px solid transparent; /* Adds a subtle border at the bottom of the header, using a CSS variable for color */
 }
-
-/* Title Panel Section (Testing)*/
-.app-headerTest {
-  padding: 20px 6vw 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  border-bottom: 1px solid var(--border-subtle);
-  background: rgb(0, 0, 0);
+.nav-bar {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color var(--transition-med), box-shadow var(--transition-med),border-color var(--transition-med), transform 0.25s ease-out;
+    border-bottom: 1px solid transparent;
 }
-.header-mainTest {
-    background-color: lightblue;
-    padding: 10px;
+.nav-right,
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 22px;
 }
-
-.header-main img {
+.nav-center {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+.appName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.nav-left img {
   height: 100px;   /* change this number to make it smaller */
   width: auto;    /* keeps the proportions correct */
 }
 
-.header-main h1{
-    font-size:100;
+/* Navigation Links */
+.nav-link {
+  font-size: 0.92rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  padding: 6px 4px;
+  position: relative;
+  transition: color var(--transition-fast);
+  cursor: pointer;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), #38bdf8);
+  transition: width var(--transition-med);
 }
 
-.header-main h2{
-    font-size: 72;
+.nav-link:hover {
+  color: var(--text-main);
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 /* Button styling */
+.btn{
+    border-radius: 999px;
+    border: 1px solid transparent;
+    padding: 9px 18px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #000000;
+    background: var(--accentColour);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 14px 30px rgba(181, 197, 34, 0.4);
+    transition: background-color var(--transition-med), color var(--transition-med),
+        border-color var(--transition-med), box-shadow var(--transition-med),
+        transform var(--transition-fast);
+    white-space: nowrap;
+}
+
 .my-button {
     background-color: #ffffff; /* Green */
     border: 2px solid #000000; /* 2px red border */
