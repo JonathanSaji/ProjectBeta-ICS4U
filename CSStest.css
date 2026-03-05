@@ -9,7 +9,7 @@
 :root {
     --bg-main: #000000;
     --bg-card: #121212;
-    --accentColour: #ffd700;
+    --accentColour: #ffc425;
     --accentColour-soft: rgba(255, 215, 0, 0.15);
     --text-main: #ffffff;
     --text-muted: #b3b3b3;
@@ -38,13 +38,14 @@ body {
 }
 /*=========Title Panel Section==========*/
 .app-header {
-    padding: 14px 20px; /* Creates empty space inside an element, specifically between the element's content and its border */
-    display: flex; /* Determines Whether it should stand alone, sit next to others, or act as a container for a complex layout*/
-    align-items: center;
-    justify-content: space-between; /* Aligns items to the left and right edges of the container, with space in between */
-    gap: 24px; /* Adds space between flex items, in this case, 24 pixels */
-    background: radial-gradient(circle at top left, rgba(252, 251, 246, 0.1)); /* Creates a radial gradient background that starts from the top left corner, with a very light color */
-    border-bottom: 1px solid transparent; /* Adds a subtle border at the bottom of the header, using a CSS variable for color */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: radial-gradient(circle at top left, rgba(71, 71, 71, 0.1)); /* Creates a radial gradient background that starts from the top left corner, with a very light color */
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    transition: var(--trans), box-shadow var(--trans);
 }
 .nav-bar {
     max-width: 1120px;
@@ -61,11 +62,12 @@ body {
     display: flex;
     align-items: center;
     gap: 22px;
+    flex-shrink: 0;
 }
 .nav-center {
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: 6px; /* Gap beteen each component on the panel*/
 }
 .appName {
   font-size: 1.2rem;
@@ -75,16 +77,17 @@ body {
   color: var(--accent);
 }
 .nav-left img {
-  height: 100px;   /* change this number to make it smaller */
+  height: 50px;   /* change this number to make it smaller */
   width: auto;    /* keeps the proportions correct */
 }
 
 /* Navigation Links */
 .nav-link {
   font-size: 0.92rem;
+  font-weight: 500;
   text-decoration: none;
   color: var(--text-muted);
-  padding: 6px 4px;
+  padding: 6px 14px;
   position: relative;
   transition: color var(--transition-fast);
   cursor: pointer;
@@ -97,7 +100,7 @@ body {
   width: 0;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent), #38bdf8);
+  background: linear-gradient(90deg, var(--accentColour), #38bdf8);
   transition: width var(--transition-med);
 }
 
@@ -107,6 +110,49 @@ body {
 
 .nav-link:hover::after {
   width: 100%;
+}
+/*=========Intro Text Section==========*/
+
+.intro-section {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 100px 28px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.intro-text{}
+
+.intro-section h1 {
+  font-family: 'poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+.intro-section h1 span { color: var(--accentColour); }
+
+.intro-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Data Preview Section */
+.dashboard-summary {
+  position: relative;
+}
+.data-preview{
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-card), 0 0 80px rgba(255,215,0,0.04);
+  position: relative;
+  overflow: hidden;
+
 }
 
 /* Button styling */
@@ -128,6 +174,16 @@ body {
         border-color var(--transition-med), box-shadow var(--transition-med),
         transform var(--transition-fast);
     white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(34, 197, 94, 0.55);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 24px rgba(34, 197, 94, 0.45);
 }
 
 .my-button {
