@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script src="script.js"></script>
 
 <!-- Title Header Creation-->
 </head>
@@ -110,7 +111,32 @@
     <p>SubSync keeps your renewals visible so surprises don’t hit your balance.</p>
   </footer>
 
-  <script src="script.js"></script>
+
+ <!-- ======== MODAL ======== -->
+<div class="modal-overlay" id="addModalOverlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="addModalTitle">
+    <button class="modal-close" id="closeAddModal" aria-label="Close">✕</button>
+    <h2 class="modal-title" id="addModalTitle">What would you like to add?</h2>
+    <p class="modal-subtitle">Choose the type of service you want to track.</p>
+
+    <div class="modal-choice-buttons">
+      <button class="modal-choice-btn" id="chooseSubscription">
+        <span class="choice-icon">📋</span>
+        <div>
+          <span class="choice-label">Subscription</span>
+          <span class="choice-desc">A recurring monthly or annual payment</span>
+        </div>
+      </button>
+      <button class="modal-choice-btn" id="chooseTrial">
+        <span class="choice-icon">⏳</span>
+        <div>
+          <span class="choice-label">Free Trial</span>
+          <span class="choice-desc">Track a trial so you don't forget to cancel</span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

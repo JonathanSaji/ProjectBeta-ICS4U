@@ -1,22 +1,50 @@
 try {
-    // Create a new button element
-    const button = document.createElement("button");
+  document.addEventListener("DOMContentLoaded", () => {
 
-    // Add text to the button
-    button.textContent = "Click Me";
+    const addModalOverlay = document.getElementById("addModalOverlay");
 
-    // Add CSS class for styling
-    button.className = "my-button";
+    // Helper functions to open/close
+    function openModal() {
+      addModalOverlay.classList.add("visible");
+      addModalOverlay.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
 
-    // Add click event listener
-    button.addEventListener("click", () => {
-        alert("Button clicked!");
+    function closeModal() {
+      addModalOverlay.classList.remove("visible");
+      addModalOverlay.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    // Both "Add Subscription" buttons open the modal
+    document.getElementById("addBtn").addEventListener("click", openModal);
+    document.getElementById("openAddModalNav").addEventListener("click", openModal);
+
+    // Close button inside modal
+    document.getElementById("closeAddModal").addEventListener("click", closeModal);
+
+    // Click outside the modal box to close
+    addModalOverlay.addEventListener("click", (e) => {
+      if (e.target === addModalOverlay) closeModal();
     });
 
-    // Append the button to the container
-    document.getElementById("button-container").appendChild(button);
+    // Escape key closes modal
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    document.getElementById("chooseSubscription").addEventListener("click", () => {
+      alert("User chose: Subscription");
+      // TODO: show subscription form
+    });
+
+    document.getElementById("chooseTrial").addEventListener("click", () => {
+      alert("User chose: Free Trial");
+      // TODO: show trial form
+    });
+  });
 } catch (error) {
-    console.error("Error creating button:", error);
+  console.error("Error:", error);
 }
 
 //Linking the monthly spending variable to the HTML element
