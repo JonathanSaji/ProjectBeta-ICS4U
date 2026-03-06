@@ -18,3 +18,8 @@ try {
 } catch (error) {
     console.error("Error creating button:", error);
 }
+
+//Linking the monthly spending variable to the HTML element
+let monthlySpending = 450.75; //Variable for monthly spending, can be updated with actual data
+const spendingDisplay = document.getElementById("monthlySpending");
+spendingDisplay.textContent = `$${monthlySpending}`;

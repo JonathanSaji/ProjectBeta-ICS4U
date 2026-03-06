@@ -11,7 +11,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<script src="script.js"></script>
 
 <!-- Title Header Creation-->
 </head>
@@ -50,23 +49,68 @@
       </div>
     </div>
 
-    <div class="dashboard-summary">
-      <div class="data-preview">
+    <div class="dashboard-summary"> <!-- Left side frame of intro section-->
+      <div class="data-preview">  <!-- Panel within the frame -->
         <div class="preview-card">
             <span class="preview-title">Monthly Spending</span>
-            <span class="preview-total">**INSERT MONTHLY SPEND VARIABLE</span>
-
+            <span id="monthlySpending" class="preview-total">Monthly Spending</span>
         </div>
-        
+
+        <div clas="data-list">  
+          <!-- Preview list of subscriptions and their costs -->
+            <div class="data-item">
+                <span class="data-name">Netflix</span>
+                <span class="data-amount">**INSERT VARIABLES / Polish</span>
+            </div>
+            <div class="data-item">
+                <span class="data-name">Spotify</span>
+                <span class="data-amount">**INSERT VARIABLES</span>
+            </div>
+            <div class="data-item">
+                <span class="data-name">Amazon Prime</span>
+                <span class="data-amount">**INSERT VARIABLE</span>
+            </div>
+        </div> 
       </div>
     </div>
-
   </section>
 
-</main>
- <footer class="app-footer">
+  <!-- ======== DASHBOARD ======== -->
+
+  <section id="dashboard" class="section-frame">
+    <span class="section-label">Dashboard</span>
+    <h2 class="section-title">Your Subscriptions</h2>
+    <p class="section-sub">A full overview of everything you're paying for, and when it's due.</p>
+
+    <div class="cards-grid">
+      <div class="stat-card">
+        <div class="stat-label">Monthly Total</div>
+        <div id="monthlySpending" class="stat-value accent">Monthly Spending</div>
+        <div class="stat-sub">Across 6 services</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Annual Estimate</div>
+        <div class="stat-value">,019</div>
+        <div class="stat-sub">+12% from last year</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Renewing Soon</div>
+        <div class="stat-value" style="color:#ffd700">2</div>
+        <div class="stat-sub">Within 7 days</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">TBD</div>
+        <div class="stat-value" style="color:#4ade80">8</div>
+        <div class="stat-sub">TBD</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="app-footer">
     <p>SubSync keeps your renewals visible so surprises don’t hit your balance.</p>
   </footer>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
